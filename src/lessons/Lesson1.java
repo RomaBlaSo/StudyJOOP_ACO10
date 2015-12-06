@@ -15,7 +15,6 @@ public class Lesson1 {
             if(array[i] > container.max) {container.max = array[i];}
 
         }
-
         return container;
 
     }
