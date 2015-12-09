@@ -59,8 +59,8 @@ public class MyInteger {
         return new MyInteger((int) res);
     }
 
-    public boolean equals(MyInteger num) {
-        return value == num.value;
+    public boolean equals(Object obj) {
+        return value == this.value;
     }
 
 }
