@@ -7,7 +7,7 @@ public class TestCalculator {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter: ");
+        System.out.println("Enter expression with digits and operators(+, -, *, /):");
 
         Calculator calc = new Calculator();
         System.out.println(calc.execute(sc.nextLine()));
