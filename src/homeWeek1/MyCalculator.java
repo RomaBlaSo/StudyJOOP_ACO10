@@ -5,7 +5,7 @@ package homeWeek1;
 //- умножение двух чисел
 //- деление двух чисел
 
-public class Calculator {
+public class MyCalculator {
 
     public int execute(String operation) {
 
