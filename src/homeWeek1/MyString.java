@@ -13,19 +13,23 @@ package homeWeek1;
 public class MyString {
 
     String value = "";
+    char[] value1;
 
     public MyString(char[] letters) {
+
+        value1 = new char[letters.length];
         for (int i = 0; i < letters.length; i++) {
-            value += letters[i];
+            value1[i] = letters[i];
         }
     }
 
-    public MyString(String str) {
-        value = str;
-    }
-
     public void show() {
-        System.out.println(this);
+
+        for (int i = 0; i < value1.length; i++) {
+            System.out.print(value1[i]);
+        }
+        System.out.println();
+
     }
 
     public String toString() {
@@ -34,14 +38,17 @@ public class MyString {
 
     public MyString add(MyString... str) {
 
-        String newValue = value;
-        for (int i = 0; i < str.length; i++) {
+        //String
+        MyString newValue = new MyString(new char[value1.length]);
 
-            newValue += str[i].value;
+//        String newValue = value;
+//        for (int i = 0; i < str.length; i++) {
+//
+//            newValue += str[i].value;
+//
+//        }
 
-        }
-
-        return new MyString(newValue);
+        return newValue;
 
     }
 
@@ -93,4 +100,10 @@ public class MyString {
         }
         return false;
     }
+
+    //delete
+    public MyString(String str) {
+        value = str;
+    }
+
 }

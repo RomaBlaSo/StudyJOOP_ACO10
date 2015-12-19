@@ -1,26 +1,17 @@
 package lessons;
 
-public class Cat {
-
-    String name;
-    int age;
-    String kind;
-
-    public Cat(){}
+public class Cat extends Zverushka{
 
     public Cat(String name, int age, String kind){
 
-        this.name = name;
-        this.age = age;
-        this.kind = kind;
+        super(name, age, kind, "Meow!");
 
     }
 
-    public String toString(){
+    public void stoke(){
 
-        return String.format("Meow, my name is %s, my age is %d, i'm %s", name, age, kind);
+        System.out.println("mrrrr...");
 
     }
-
 
 }
