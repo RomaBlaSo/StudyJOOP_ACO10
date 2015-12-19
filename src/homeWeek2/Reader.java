@@ -26,7 +26,7 @@ public class Reader {
     }
 
     public String toString() {
-        return String.format("Reader %s (id: %s)", id, name);
+        return String.format("Reader %s (id: %s)" + (isBad ? " - is BAD" : ""), name, id);
     }
 
     public boolean equals(Object o) {

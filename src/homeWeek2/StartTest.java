@@ -21,19 +21,24 @@ public class StartTest {
         mainLib.fillBooks();
         mainLib.fillReaders();
 
-        System.out.println("ALL BOOKS:");
-        //mainLib.showBooks();
+//        System.out.println("ALL BOOKS:");
+//        //mainLib.showBooks();
 //        mainLib.showBooksByFilter(s -> s.count - s.countOut > 0);
-
-        System.out.println("NEW BOOKS:");
+//
+//        System.out.println("NEW BOOKS:");
 //        mainLib.showNewBooks();
-
-        System.out.println("BOOKS by Булгаков Михаил:");
+//
+//        System.out.println("BOOKS by Булгаков Михаил:");
 //        mainLib.showBooksByAuthor("Булгаков Михаил");
 
+        mainLib.readers.get(3).setBad();
+
         mainLib.giveBookToReader(mainLib.readers.get(0), mainLib.books.get(5));
+        mainLib.giveBookToReader(mainLib.readers.get(1), mainLib.books.get(14));
+        mainLib.giveBookToReader(mainLib.readers.get(2), mainLib.books.get(11));
 
         mainLib.showBooksAtReader();
+        mainLib.showBooksSelectedReader(mainLib.readers.get(1));
 
     }
 

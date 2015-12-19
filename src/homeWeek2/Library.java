@@ -16,7 +16,7 @@ public class Library {
 
     }
 
-    public void fillBooks(){
+    public void fillBooks() {
 
         addBook(new Book("Артур Конан Дойль", "Приключения Шерлока Холмса", 1892, 4));
         addBook(new Book("Булгаков Михаил", "Мастер и Маргарита", 1960, 14));
@@ -45,13 +45,14 @@ public class Library {
 
     }
 
-    public void fillReaders(){
+    public void fillReaders() {
         addReader(new Reader("562", "Андрей"));
         addReader(new Reader("563", "Василий"));
         addReader(new Reader("564", "Оксана"));
         addReader(new Reader("111", "Ольга"));
         addReader(new Reader("222", "Артур"));
     }
+
     public void showReaders() {
         readers.forEach(System.out::println);
     }
@@ -68,7 +69,7 @@ public class Library {
         books.stream().filter(s -> s.author.equals(seekingAuthor)).forEach(System.out::println);
     }
 
-    public void showBooksByFilter(Predicate<Book> predicate){
+    public void showBooksByFilter(Predicate<Book> predicate) {
         books.stream().filter(predicate).forEach(System.out::println);
     }
 
@@ -83,7 +84,7 @@ public class Library {
             oldBook.count += newBook.count;
         }
     }
-    
+
     public void addReader(Reader newReader) {
         int index = readers.indexOf(newReader);
         if (index == -1) {
@@ -94,7 +95,7 @@ public class Library {
     }
 
     public void giveBookToReader(Reader reader, Book newBook) {
-        
+
         if (reader.isBad()) {
             System.err.println("You are blocked");
             return;
@@ -113,16 +114,20 @@ public class Library {
 
     }
 
-    //посмотреть список книг, которые находятся у читателей
-    public void showBooksAtReader(){
+    public void showBooksAtReader() {
         Stream<Reader> readerStream = readers.stream().filter(s -> s.books.size() > 0);
-        readerStream.forEach(r -> {System.out.println(r); r.books.forEach(System.out::println);});
-       // readerStream.flatMap((reader) -> reader.books.stream()).forEach();
+        readerStream.forEach(r -> {
+            System.out.println(r);
+            r.books.forEach(System.out::println);
+        });
     }
 
-    //посмотреть список книг, которые находятся у конкретного читателя
-    public void showBooksSelectedReader(Reader selectedReader){
-        readers.stream().filter(s -> s.equals(selectedReader)).forEach(System.out::println);
+    public void showBooksSelectedReader(Reader selectedReader) {
+        Stream<Reader> readerStream = readers.stream().filter(s -> s.equals(selectedReader));
+        readerStream.forEach(r -> {
+            System.out.println(r);
+            r.books.forEach(System.out::println);
+        });
     }
 
 }
